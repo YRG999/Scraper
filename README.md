@@ -11,7 +11,6 @@ Scraper uses [snscrape](https://github.com/JustAnotherArchivist/snscrape) to scr
 * twitter search -- choose from straight up search to username, since, until
 
 ## Helpful links
-* 
 * print to csv: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html
 * https://www.w3schools.com/python/ref_func_input.asp
 * https://www.freecodecamp.org/news/python-convert-string-to-int-how-to-cast-a-string-in-python/
