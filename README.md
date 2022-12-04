@@ -2,6 +2,17 @@
 
 Scraper uses [snscrape](https://github.com/JustAnotherArchivist/snscrape) to scrape twitter and reddit posts. Thank you to Martin Beck's [How to Scrape Tweets With snscrape](https://betterprogramming.pub/how-to-scrape-tweets-with-snscrape-90124ed006af) write-up, which got me started. See his files under `/snscrape`.
 
+## To run
+* Type `python3 Scraper.py`
+* Choose:
+  1. To search on Twitter. This accepts the same [advanced search operators](https://developer.twitter.com/en/docs/twitter-api/v1/rules-and-filtering/search-operators) as the Twitter search box.
+  2. To search on Reddit. 
+  3. To search for a Subreddit with the term you entered. Results should show posts from that subreddit if it exists. This results aren't complete. It doesn't show the post, but it does show the URL.
+* Type the maximum number of results to receive.
+* Type a search term or terms.
+* Type a filename prefix (random numbers and the count will be appended to this name).
+* Output is a `.csv` file with the full name shown in the console.
+
 ## To do
 * make first choice a function
 * make if statements into functions
