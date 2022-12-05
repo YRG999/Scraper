@@ -1,6 +1,6 @@
 # Scraper
 
-Scraper uses [snscrape](https://github.com/JustAnotherArchivist/snscrape) to scrape twitter and reddit posts. Thank you to Martin Beck's [How to Scrape Tweets With snscrape](https://betterprogramming.pub/how-to-scrape-tweets-with-snscrape-90124ed006af) write-up, which got me started. See his files under `/snscrape`.
+Scraper uses [snscrape](https://github.com/JustAnotherArchivist/snscrape) to scrape twitter and reddit posts. Thank you to Martin Beck's [How to Scrape Tweets With snscrape](https://betterprogramming.pub/how-to-scrape-tweets-with-snscrape-90124ed006af) write-up, which got me started. See his files under `/TwitterScraper`. The files in that directory are not necessary to run `Scraper.py`
 
 ## To run
 * Type `python3 Scraper.py`
