@@ -1,6 +1,7 @@
 # Simple Scraper
 # See README.md for details.
 
+# Import modules
 import snscrape.modules.twitter as sntwitter
 import snscrape.modules.reddit as snredditsub
 import pandas as pd
@@ -9,29 +10,26 @@ import csv
 import json
 import random
 
-print("1-Twitter; 2-Reddit; 3-Subreddit name")
-choice = input()
+# Choose platform to search
+choice = input("1-Twitter; 2-Reddit; 3-Subreddit name\n")
 
+# Create filename
 def filename_func(max_num_str,filename):
     rstring = str(random.randrange(10000))
     full_filename = filename+rstring+"-"+max_num_str
     print('File name is '+full_filename+'.csv')
     return full_filename
 
+# User choices, max results, search term, filename number
 def userInput():
-    # User choices, max results, search term, filename number
-    print("Maximum results (number): ")
-    max_num_str = input()
-    print("Search term: ")
-    search_term = input()
-    print("Filename prefix (no spaces): ")
-    filename = input()
+    max_num_str = input("Maximum results (number):\n")
+    search_term = input("Search term:\n")
+    filename = input("Filename prefix (no spaces):\n")
     return max_num_str, search_term, filename
 
+# Choice 1: Search Twitter
+# For example, from:username since:2022-01-01 until:2022-12-01
 if choice == "1":
-
-    # Twitter
-    # For example, from:username since:2022-01-01 until:2022-12-01
 
     answer = userInput()
     max_num_str = answer[0]
@@ -53,9 +51,8 @@ if choice == "1":
     # print to csv
     tweets_df2.to_csv(full_filename+'.csv')
 
+# Choice 2: Reddit
 elif choice == "2":
-
-    # Reddit
 
     answer = userInput()
     max_num_str = answer[0]
@@ -95,9 +92,8 @@ elif choice == "2":
         # data_to_write = [data["body"]]
         writer.writerow(data_to_write)
 
+# Choice 3: Subreddit name - show posts
 elif choice == "3":
-
-    # Show posts for Subreddit name
 
     answer = userInput()
     max_num_str = answer[0]
@@ -119,6 +115,7 @@ elif choice == "3":
     # print to csv
     df3.to_csv(full_filename+'.csv')
 
+# Unknown choice or error
 else:
     print("\nBye!")
     print("\nHelpful links:\nhttps://github.com/JustAnotherArchivist/snscrape\nhttps://betterprogramming.pub/how-to-scrape-tweets-with-snscrape-90124ed006af\n")
