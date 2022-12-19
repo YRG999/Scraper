@@ -11,7 +11,7 @@ import json
 import random
 
 # Choose platform to search
-choice = input("1-Twitter; 2-Reddit; 3-Subreddit name\n")
+choice = input("1-Twitter; 2-Reddit; 3-Subreddit name\n(As of 12-18-22 Reddit search unavailable, see readme)\n")
 
 # Create filename
 def filename_func(max_num_str,filename):
@@ -27,16 +27,17 @@ def userInput():
     filename = input("Filename prefix (no spaces):\n")
     return max_num_str, search_term, filename
 
+# Create global variables for answers
+answer = userInput()
+max_num_str = answer[0]
+search_term = answer[1]
+filename = answer[2]
+full_filename = filename_func(max_num_str,filename)
+max_num = int(max_num_str)
+
 # Choice 1: Search Twitter
 # For example, from:username since:2022-01-01 until:2022-12-01
 if choice == "1":
-
-    answer = userInput()
-    max_num_str = answer[0]
-    search_term = answer[1]
-    filename = answer[2]
-    full_filename = filename_func(max_num_str,filename)
-    max_num = int(max_num_str)
 
     tweets_list2 = []
 
@@ -49,17 +50,10 @@ if choice == "1":
     tweets_df2 = pd.DataFrame(tweets_list2, columns=['Datetime', 'Text', 'Username', 'URL', 'Media'])
 
     # print to csv
-    tweets_df2.to_csv(full_filename+'.csv')
+    tweets_df2.to_csv('output/'+full_filename+'.csv')
 
 # Choice 2: Reddit
 elif choice == "2":
-
-    answer = userInput()
-    max_num_str = answer[0]
-    search_term = answer[1]
-    filename = answer[2]
-    full_filename = filename_func(max_num_str,filename)
-    max_num = int(max_num_str)
 
     # os command
     command = "snscrape --jsonl --progress --max-results {} reddit-search '{}' > {}.json"
@@ -67,8 +61,8 @@ elif choice == "2":
     # command with user choices
     run_command = command.format(max_num, search_term, full_filename)
 
-    infile0 = full_filename+".json"
-    outfile0 = full_filename+".csv"
+    infile0 = "output/"+full_filename+".json"
+    outfile0 = "output/"+full_filename+".csv"
 
     os.system(run_command)
 
@@ -95,13 +89,6 @@ elif choice == "2":
 # Choice 3: Subreddit name - show posts
 elif choice == "3":
 
-    answer = userInput()
-    max_num_str = answer[0]
-    search_term = answer[1]
-    filename = answer[2]
-    full_filename = filename_func(max_num_str,filename)
-    max_num = int(max_num_str)
-
     datalist3 = []
 
     # get subreddit name
@@ -113,7 +100,7 @@ elif choice == "3":
     df3 = pd.DataFrame(datalist3, columns=['author','created','id','subreddit','URL'])
 
     # print to csv
-    df3.to_csv(full_filename+'.csv')
+    df3.to_csv('output/'+full_filename+'.csv')
 
 # Unknown choice or error
 else:
