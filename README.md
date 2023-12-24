@@ -1,4 +1,43 @@
-# Scraper
+# Scraper fork
+
+[How to Scrape Tweets From Twitter (updated)](https://medium.com/p/141ed19abb10)
+
+* https://github.com/MartinKBeck/TwitterScraper
+* [How to add a collapsible section in markdown](https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1ab)
+
+## Setup
+
+For initial setup, create a virtual environment & run it:
+
+```bash
+$ python3 -m venv venv
+$ . venv/bin/activate
+```
+
+Then install requirements:
+
+```shell
+$ pip install -r requirements.txt
+```
+
+Thereafter, just run the second venv line to activate the virtual environment.
+
+## Run
+
+*The first Scraper used snscrape, which can no longer access the Twitter API.*
+
+*Scraper2 Uses [Tweepy](https://www.tweepy.org/) to access the Twitter API.*
+
+***NOTE: Did not test as Twitter API is $100/mo.***
+
+Type `python` and the file name.
+
+```shell
+$ python Scraper2.py
+```
+
+<details>
+  <summary>Archived</summary>
 
 > **NOTE: [Reddit Scraper Broken](https://github.com/JustAnotherArchivist/snscrape/issues/619) as of 12/14/22.**
 
@@ -51,3 +90,5 @@ Scraper uses [snscrape](https://github.com/JustAnotherArchivist/snscrape) to scr
 * The submission title: `title:term`
 * The submission's URL (the website's address): `url:address`
 * Combined search: `author:name subreddit:name searchterm`
+
+</details>

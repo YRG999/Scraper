@@ -1,0 +1,5 @@
+snscrape
+tweepy
+requests
+beautifulsoup4
+pandas
