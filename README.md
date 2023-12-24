@@ -24,7 +24,7 @@ Thereafter, just run the second venv line to activate the virtual environment.
 
 ## Run
 
-*The first Scraper used snscrape, which can no longer access the Twitter API.*
+*The first Scraper used snscrape, [which can no longer access](https://github.com/JustAnotherArchivist/snscrape/issues/996) the Twitter API.*
 
 *Scraper2 Uses [Tweepy](https://www.tweepy.org/) to access the Twitter API.*
 
